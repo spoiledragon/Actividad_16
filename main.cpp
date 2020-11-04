@@ -17,15 +17,15 @@ int main()
     cout << "6) inicializar" << endl;
     cout << "7) borrar" << endl;
     cout << "8) ordenar" << endl;
+    cout << "9) buscar" << endl;
     cout << "0) Salir" << endl;
     getline(cin, opc);
-  cin.ignore();
     if (opc == "1")
     {
       Computador c1;
       cin >> c1;
-      Lab1.agregarpc(c1);
       cin.ignore();
+      Lab1.agregarpc(c1);
     }
 
     else if (opc == "2")
@@ -90,18 +90,32 @@ int main()
       }
     }
 
-    else if(opc=="8")
+    else if (opc == "8")
     {
       Lab1.ordenar();
     }
-    
+
+    else if (opc == "9")
+    {
+      Computador c1;
+      cin >> c1;
+      Computador *cb = Lab1.buscar(c1);
+      if (cb == nullptr)
+      {
+        cout << "no se encontro la computadora" << endl;
+      }
+      else
+      {
+        cout << *cb << endl;
+      }
+    }
 
     else if (opc == "0")
     {
       break;
     }
 
-  } while (true);
+  }while (true);
 
   return 0;
 }

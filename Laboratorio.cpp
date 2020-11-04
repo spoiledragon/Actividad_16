@@ -137,5 +137,11 @@ void Laboratorio::ordenar(){
 }
 
 Computador* Laboratorio::buscar(const Computador& c){
-find(computadoras.begin(),computadoras.end(),c);
+auto it =find(computadoras.begin(),computadoras.end(),c);
+if(it==computadoras.end()){
+    return nullptr;
+}else{
+    //accede a la direccion de memoria y me regresa desreferenciandola
+    return &(*it);
+}
 }

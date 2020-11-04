@@ -71,6 +71,15 @@ public:
     {
         return nombre > c1.nombre;
     }
+
+    bool operator==(const Computador &c1) 
+    {
+        return nombre == c1.nombre;
+    }
+    bool operator==(const Computador &c1) const
+    {
+        return nombre == c1.nombre;
+    }
 };
 
 #endif
